@@ -23,6 +23,10 @@ public class Coord {
     this.y = y;
   }
 
+  public boolean compareCoords(Coord other) {
+    return this.x == other.x && this.y == other.y;
+  }
+
 
 
 }
