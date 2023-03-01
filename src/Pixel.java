@@ -1,4 +1,19 @@
+import java.util.Arrays;
+
 public class Pixel {
-  int[] rbga;
-  Coord coords;
+  private int[] rgba;
+  private Coord coords;
+
+  private int value;
+  private int intensity;
+
+  private int luma;
+
+
+  Pixel(int[] rgba, Coord coords) {
+    this.rgba = new int[4];
+    this.coords = coords;
+    value = Arrays.stream(rgba).max().getAsInt();
+
+  }
 }
