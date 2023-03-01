@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.util.Arrays;
 
+/**
+ * A Pixel class to represent a pixel in an image by maintaing a location, color and brightness.
+ */
 public class Pixel {
   private int[] rgba;
   private Coord coords;
@@ -21,7 +24,7 @@ public class Pixel {
     this.coords = coords;
     value = Arrays.stream(rgba).max().getAsInt();
     intensity = (int)Math.ceil(Arrays.stream(rgba).average().orElse(Double.NaN));
-    luma =  (int)Math.ceil((.2126 * rgba[0])+ .6152 * rgba[1]+ .0722 * rgba[2]);
+    luma =  (int)Math.ceil((.2126 * rgba[0])+ .7152 * rgba[1]+ .0722 * rgba[2]);
 
   }
 
@@ -49,6 +52,29 @@ public class Pixel {
     return rgba;
   }
 
+  /**
+   * Get the luma.
+   * @return an int to represent the luma.
+   */
+  public int getLumosity() {
+    return luma;
+  }
+
+  /**
+   * Gets the value of the pixels.
+   * @return the value of the pixels.
+   */
+  public int getValue() {
+    return value;
+  }
+
+  /**
+   * Gets the intensity of the pixel.
+   * @return an int to represent the intensity.
+   */
+  public int getIntensity() {
+    return intensity;
+  }
 
   /**
    * Create a color using the Pixel values of rgb.
