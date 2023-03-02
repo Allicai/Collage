@@ -1,0 +1,35 @@
+Pixel class
+methods to brighten/darken
+brighten and darken use one of the values for value, intensity, and luma.
+darken = minus the chosen brightness value
+brighten = add the chosen brightness value
+
+
+
+Project class (our model basically)
+filter methods
+
+Filters have NO EFFECT on the image beneath transparent pixels
+
+each image is an ArrayList<ArrayList<Pixel>>
+
+filters can use nested for loops to parse through the arraylists and do whatever effect they're meant to have, include an if statement that checks the alpha value of the current pixel, if it is transparent, there should be no effect.
+
+Methods to get individual colors from an image, i.e.
+if an image has a pixel that has the rgb values (126, 156, 251) and we filter for red,
+we should get a pixel that is (126, 0, 0).
+getRedPixels adds a layer that only exposes the red colors, results in a composite image of the current layer and any layer below it that is visible made of various shades of red. etc. for green and blue
+
+crop and blur and other heavy duty manipulations can be left seperate of filters
+
+method to create a new project with the given dimensions
+
+method to create a new layer
+
+etc.
+
+Figure out how to get a filepath and save/load projects
+
+
+
+
